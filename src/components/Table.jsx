@@ -34,7 +34,7 @@ const Table = () => {
   return (
     <div className='bg-black text-white min-h-screen'>
       
-      <h1 className='text-center text-green-400 text-2xl pt-10 flex  justify-center items-center gap-5'>Product Dashbord <DashboardIcon color="success"/>
+      <h1 className='text-center text-green-400 text-2xl pt-10 flex  justify-center items-center gap-5'>Product Dashboard <DashboardIcon color="success"/>
       </h1> 
     <div className='flex justify-between py-10 px-0 md:px-10 flex-col md:flex-row items-center'>
       <h1 className='text-l  text-green-400'>Select Month to view products accordingly</h1>
