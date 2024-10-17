@@ -57,73 +57,70 @@ const Table = () => {
 <div className=" overflow-x-auto flex flex-col items-center justify-center pt-10">
   <h2 className='text-green-500 text-lg py-9 px-8'>Products for {selectedMonth ? `Month ${selectedMonth}` : 'Selected Month'}</h2>
   {products.length > 0 ? (
-    <div class="relative">
-    <table class="w-full overflow-x-scroll text-sm text-left  text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div className="relative overflow-x-auto w-[400px] md:w-full">
+    <table className=" text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th scope="col" class="px-6 py-3" >
+                <th scope="col" className="px-6 py-3">
                     Product ID
                 </th>
-                <th scope="col" class="px-6 py-3" >
+                <th scope="col" className="px-6 py-3">
                     Title
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                     Description
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                     Price
                 </th>
-                <th >
+                <th scope="col" className="px-6 py-3">
                     Category
                 </th>
-                <th >
-                    Sold 
+                <th scope="col" className="px-6 py-3">
+                    Sold
                 </th>
-                <th scope="col" class="px-6 py-3" >
-                   Date Of Sale
+                <th scope="col" className="px-6 py-3">
+                    Date Of Sale
                 </th>
-                <th scope="col" class="px-6 py-3" >
-                   Image of Product
+                <th scope="col" className="px-6 py-3">
+                    Image of Product
                 </th>
             </tr>
         </thead>
         <tbody>
-          {
-            products.map(product =>{
-              return <tr key={product._id}>
-                <td class="px-6 py-4">
-                   {product._id}
-                </td>
-                <td class="px-6 py-4" >
-                {product.productTitle}
-                </td>
-                <td class="px-6 py-4" >
-                {product.productDescription}
-                </td>
-                <td class="px-6 py-4"  >
-                {product.productPrice}
-                </td>
-                <td class="px-6 py-4" >
-                {product.productCategory}
-                </td>
-                
-                <td class="px-6 py-4" >
-                {product.sold ? "Yes" : "No"}
-                </td>
-                <td class="px-6 py-4" >
-                {new Date(product.dateOfSale).toLocaleDateString()}
-                </td>
-                <td class="px-6 py-4" >
-                <img src={product.image} alt="" width='150' />
-                </td>
-            </tr>
-            })
-          }
-       
+            {products.map(product => (
+                <tr key={product._id} className="border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td className="px-6 py-4">
+                        {product._id}
+                    </td>
+                    <td className="px-6 py-4">
+                        {product.productTitle}
+                    </td>
+                    <td className="px-6 py-4">
+                        {product.productDescription}
+                    </td>
+                    <td className="px-6 py-4">
+                        {product.productPrice}
+                    </td>
+                    <td className="px-6 py-4">
+                        {product.productCategory}
+                    </td>
+                    <td className="px-6 py-4">
+                        {product.sold ? "Yes" : "No"}
+                    </td>
+                    <td className="px-6 py-4">
+                        {new Date(product.dateOfSale).toLocaleDateString()}
+                    </td>
+                    <td className="px-6 py-4">
+                        <img src={product.image} alt="" width="150" />
+                    </td>
+                </tr>
+            ))}
         </tbody>
-   
     </table>
-    </div> ) : (
+</div>
+
+ ) : (
       <p>No product Available for the selected month</p>
     )
     }
