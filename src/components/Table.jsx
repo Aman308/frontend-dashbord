@@ -57,8 +57,8 @@ const Table = () => {
 <div className=" overflow-x-auto flex flex-col items-center justify-center pt-10">
   <h2 className='text-green-500 text-lg py-9 px-8'>Products for {selectedMonth ? `Month ${selectedMonth}` : 'Selected Month'}</h2>
   {products.length > 0 ? (
-    <div className="relative overflow-x-auto w-[450px] md:w-full">
-    <table className=" text-sm text-left text-gray-500 dark:text-gray-400">
+    <div className="relative overflow-x-auto w-[450px] md:w-full ">
+    <table className="  mx-10 text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" className="px-6 py-3">
